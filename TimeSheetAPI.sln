@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeSheetAPI", "TimeSheetAPI\TimeSheetAPI.csproj", "{38A84DED-815A-4D05-9FE7-3660D0EF0413}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeSheetAPITests", "TimeSheetAPITests\TimeSheetAPITests.csproj", "{516A4348-7C10-42E5-A43E-DFCE92CFEFAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38A84DED-815A-4D05-9FE7-3660D0EF0413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A84DED-815A-4D05-9FE7-3660D0EF0413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A84DED-815A-4D05-9FE7-3660D0EF0413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A84DED-815A-4D05-9FE7-3660D0EF0413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{516A4348-7C10-42E5-A43E-DFCE92CFEFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{516A4348-7C10-42E5-A43E-DFCE92CFEFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{516A4348-7C10-42E5-A43E-DFCE92CFEFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{516A4348-7C10-42E5-A43E-DFCE92CFEFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5002157-460E-4682-97A5-8AC45C12177A}
+	EndGlobalSection
+EndGlobal

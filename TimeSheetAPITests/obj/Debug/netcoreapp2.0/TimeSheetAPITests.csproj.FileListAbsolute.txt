@@ -1,0 +1,6 @@
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPITests\bin\Debug\netcoreapp2.0\TimeSheetAPITests.deps.json
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPITests\bin\Debug\netcoreapp2.0\TimeSheetAPITests.dll
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPITests\obj\Debug\netcoreapp2.0\TimeSheetAPITests.csprojResolveAssemblyReference.cache
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPITests\obj\Debug\netcoreapp2.0\TimeSheetAPITests.csproj.CoreCompileInputs.cache
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPITests\obj\Debug\netcoreapp2.0\TimeSheetAPITests.AssemblyInfoInputs.cache
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPITests\obj\Debug\netcoreapp2.0\TimeSheetAPITests.AssemblyInfo.cs
