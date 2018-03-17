@@ -1,0 +1,11 @@
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPI\bin\Debug\netcoreapp2.0\TimeSheetAPI.deps.json
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPI\bin\Debug\netcoreapp2.0\TimeSheetAPI.runtimeconfig.json
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPI\bin\Debug\netcoreapp2.0\TimeSheetAPI.runtimeconfig.dev.json
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPI\bin\Debug\netcoreapp2.0\TimeSheetAPI.dll
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPI\obj\Debug\netcoreapp2.0\TimeSheetAPI.csprojResolveAssemblyReference.cache
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPI\obj\Debug\netcoreapp2.0\TimeSheetAPI.csproj.CoreCompileInputs.cache
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPI\obj\Debug\netcoreapp2.0\TimeSheetAPI.AssemblyInfoInputs.cache
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPI\obj\Debug\netcoreapp2.0\TimeSheetAPI.AssemblyInfo.cs
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPI\bin\Debug\netcoreapp2.0\TimeSheetAPI.pdb
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPI\obj\Debug\netcoreapp2.0\TimeSheetAPI.dll
+F:\Programowanie\TimeSheetAngular\API\TimeSheetAPI\TimeSheetAPI\obj\Debug\netcoreapp2.0\TimeSheetAPI.pdb
