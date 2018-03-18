@@ -8,7 +8,7 @@ using TimeSheetAPI.Models;
 
 namespace TimeSheetAPI.Data
 {
-    public class DBContext : IdentityDbContext
+    public class DBContext : IdentityDbContext<User>
     {
         public DBContext(DbContextOptions<DBContext> options)
             : base(options)
@@ -39,8 +39,8 @@ namespace TimeSheetAPI.Data
 
         public DbSet<Summary> Summaries { get; set; }
         public DbSet<Entry> Entries { get; set; }
-        public DbSet<User> Users { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<EntrySummary> EntrySummaries { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }
