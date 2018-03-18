@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +16,9 @@ namespace TimeSheetAPI.Models
         public string Type { get; set; }
         public bool AllDay { get; set; }
         public string UserId { get; set; }
+
+        public User User { get; set; }
+        public ICollection<EntrySummary> EntrySummaries { get; set; }
 
         public Entry(int id, DateTime date, TimeSpan startTime, TimeSpan endTime, TimeSpan outsideTime, string type, bool allDay, string userId)
         {

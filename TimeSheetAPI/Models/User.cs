@@ -13,5 +13,7 @@ namespace TimeSheetAPI.Models
         public string BankAccountNumber { get; set; }
         public double Sallary { get; set; }
         public int PositionId { get; set; }
+
+        public Position Position { get; set; }
     }
 }

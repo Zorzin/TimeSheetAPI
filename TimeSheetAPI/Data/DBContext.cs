@@ -20,10 +20,27 @@ namespace TimeSheetAPI.Data
             // PostgreSQL uses the public schema by default - not dbo.
             builder.HasDefaultSchema("dbo");
             base.OnModelCreating(builder);
+
+
+            builder.Entity<EntrySummary>()
+                .HasKey(bc => new { bc.EntryId, bc.SummaryId });
+
+            builder.Entity<EntrySummary>()
+                .HasOne(bc => bc.Entry)
+                .WithMany(b => b.EntrySummaries)
+                .HasForeignKey(bc => bc.EntryId);
+
+            builder.Entity<EntrySummary>()
+                .HasOne(bc => bc.Summary)
+                .WithMany(c => c.EntrySummaries)
+                .HasForeignKey(bc => bc.SummaryId);
+
         }
 
         public DbSet<Summary> Summaries { get; set; }
         public DbSet<Entry> Entries { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<EntrySummary> EntrySummaries { get; set; }
     }
 }

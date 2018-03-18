@@ -14,6 +14,9 @@ namespace TimeSheetAPI.Models
         public DateTime EndDate { get; set; }
         public string UserId { get; set; }
 
+        public User User { get; set; }
+        public ICollection<EntrySummary> EntrySummaries { get; set; }
+
         public Summary(int id, TimeSpan timeAmount, DateTime startDate, DateTime endDate, string userId)
         {
             Id = id;
