@@ -31,6 +31,13 @@ namespace TimeSheetAPI.Controllers
             return _context.Entries;
         }
 
+        // GET: api/Entries
+        [HttpGet]
+        public IEnumerable<Entry> GetEntries(DateTime startDate, DateTime endDate)
+        {
+            return _entryHelper.GetEntriesBetweenDates(startDate,endDate);
+        }
+
         // GET: api/Entries/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEntry([FromRoute] int id)
