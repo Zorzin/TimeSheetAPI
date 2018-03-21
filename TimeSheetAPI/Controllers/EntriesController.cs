@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TimeSheetAPI.Data;
+using TimeSheetAPI.Helpers;
 using TimeSheetAPI.Models;
 
 namespace TimeSheetAPI.Controllers
@@ -15,10 +16,12 @@ namespace TimeSheetAPI.Controllers
     public class EntriesController : Controller
     {
         private readonly DBContext _context;
+        private readonly IEntryHelper _entryHelper;
 
-        public EntriesController(DBContext context)
+        public EntriesController(DBContext context, IEntryHelper entryHelper)
         {
             _context = context;
+            _entryHelper = entryHelper;
         }
 
         // GET: api/Entries
@@ -91,8 +94,21 @@ namespace TimeSheetAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.Entries.Add(entry);
-            await _context.SaveChangesAsync();
+            if (_entryHelper.DateContainsEntry(entry.Date))
+            {
+                return BadRequest(entry);
+            }
+
+            try
+            {
+                _context.Entries.Add(entry);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
 
             return CreatedAtAction("GetEntry", new { id = entry.Id }, entry);
         }

@@ -22,7 +22,7 @@ namespace TimeSheetAPI
 {
     public class Startup
     {
-        private const string SecretKey = "iNivDmHLpUA223sqsfhqGbMRdRj1PVkH"; // todo: get this from somewhere secure
+        private const string SecretKey = "SecretKeyForDevelopment"; // todo: change this when release
         private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey));
         public Startup(IConfiguration configuration)
         {
@@ -51,6 +51,7 @@ namespace TimeSheetAPI
 
             services.AddScoped<IAccountHelper, AccountHelper>();
             services.AddScoped<IJwtFactory, JwtFactory>();
+            services.AddScoped<IEntryHelper, EntryHelper>();
 
 
             // Get options from app settings
