@@ -17,6 +17,7 @@ using Newtonsoft.Json;
 using TimeSheetAPI.Data;
 using TimeSheetAPI.Helpers;
 using TimeSheetAPI.Models;
+using FluentValidation.AspNetCore;
 
 namespace TimeSheetAPI
 {
@@ -37,15 +38,14 @@ namespace TimeSheetAPI
             services.AddMvc().AddJsonOptions(options =>
             {
                 options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
-            });
+            })
+            .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>()); ;
+
             services.AddCors();
             services.AddDbContext<DBContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DBContext")));
 
-            services.AddIdentity<User, IdentityRole>(options =>
-                {
-                    options.User.RequireUniqueEmail = true;
-                })
+            services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<DBContext>()
                 .AddDefaultTokenProviders();
 
@@ -96,6 +96,17 @@ namespace TimeSheetAPI
             {
                 options.AddPolicy("ApiUser", policy => policy.RequireClaim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.ApiAccess));
             });
+            var builder = services.AddIdentityCore<User>(o =>
+            {
+                // configure identity options
+                o.Password.RequireDigit = false;
+                o.Password.RequireLowercase = false;
+                o.Password.RequireUppercase = false;
+                o.Password.RequireNonAlphanumeric = false;
+                o.Password.RequiredLength = 6;
+            });
+            builder = new IdentityBuilder(builder.UserType, typeof(IdentityRole), builder.Services);
+            builder.AddEntityFrameworkStores<DBContext>().AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -108,6 +119,9 @@ namespace TimeSheetAPI
 
             app.UseCors(builder =>
                 builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+            app.UseAuthentication();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }

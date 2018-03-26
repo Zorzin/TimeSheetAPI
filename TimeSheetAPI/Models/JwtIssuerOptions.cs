@@ -49,7 +49,7 @@ namespace TimeSheetAPI.Models
         /// "jti" (JWT ID) Claim (default ID is a GUID)
         /// </summary>
         public Func<Task<string>> JtiGenerator =>
-          () => Task.FromResult(Guid.NewGuid().ToString());
+          () => Task.FromResult(Guid.NewGuid().ToString()); 
 
         /// <summary>
         /// The signing key to use when generating tokens.

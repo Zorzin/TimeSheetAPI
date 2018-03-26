@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ namespace TimeSheetAPI.Controllers
 {
     [Produces("application/json")]
     [Route("api/Entries")]
+    [Authorize(Policy = "ApiUser")]
     public class EntriesController : Controller
     {
         private readonly DBContext _context;
@@ -32,10 +34,10 @@ namespace TimeSheetAPI.Controllers
         }
 
         // GET: api/Entries
-        [HttpGet]
-        public IEnumerable<Entry> GetEntries(DateTime startDate, DateTime endDate)
+        [HttpGet("{userId}/{startDate}/{endDate}")]
+        public IEnumerable<Entry> GetEntriesByDates(string userId, DateTime startDate, DateTime endDate)
         {
-            return _entryHelper.GetEntriesBetweenDates(startDate,endDate);
+            return _entryHelper.GetEntriesBetweenDates(userId, startDate,endDate);
         }
 
         // GET: api/Entries/5

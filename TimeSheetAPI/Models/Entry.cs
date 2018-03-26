@@ -20,6 +20,11 @@ namespace TimeSheetAPI.Models
         public User User { get; set; }
         public ICollection<EntrySummary> EntrySummaries { get; set; }
 
+        public Entry()
+        {
+            
+        }
+
         public Entry(int id, DateTime date, TimeSpan startTime, TimeSpan endTime, TimeSpan outsideTime, string type, bool allDay, string userId)
         {
             Id = id;

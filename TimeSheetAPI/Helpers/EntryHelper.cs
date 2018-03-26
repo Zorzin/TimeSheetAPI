@@ -21,15 +21,15 @@ namespace TimeSheetAPI.Helpers
             return _dbContext.Entries.Any(e => e.Date == date);
         }
 
-        public IEnumerable<Entry> GetEntriesBetweenDates(DateTime startDate, DateTime endDate)
+        public IEnumerable<Entry> GetEntriesBetweenDates(string userId, DateTime startDate, DateTime endDate)
         {
-            return _dbContext.Entries.Where(e => e.Date >= startDate && e.Date <= endDate);
+            return _dbContext.Entries.Where(e => e.Date >= startDate && e.Date <= endDate && e.UserId == userId);
         }
     }
 
     public interface IEntryHelper
     {
         bool DateContainsEntry(DateTime date);
-        IEnumerable<Entry> GetEntriesBetweenDates(DateTime startDate, DateTime endDate);
+        IEnumerable<Entry> GetEntriesBetweenDates(string userId, DateTime startDate, DateTime endDate);
     }
 }
