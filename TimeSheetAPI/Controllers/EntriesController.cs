@@ -40,6 +40,13 @@ namespace TimeSheetAPI.Controllers
             return _entryHelper.GetEntriesBetweenDates(userId, startDate,endDate);
         }
 
+        // GET: api/Entries
+        [HttpGet("date/{userId}/{date}")]
+        public async Task<Entry> GetEntryForDate(string userId, DateTime date)
+        {
+            return await _entryHelper.GetEntryForDate(userId, date);
+        }
+
         // GET: api/Entries/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEntry([FromRoute] int id)
